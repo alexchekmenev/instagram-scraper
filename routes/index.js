@@ -29,7 +29,7 @@ var getProfiles = function (file) {
         if (err) {
             deferred.reject(err);
         } else {
-            var lines = data.toString().replace("\r", '').split("\n");
+            var lines = data.toString().replace("\r", '').replace(' ', '').split("\n");
             deferred.resolve(
                 Q.allSettled(lines.filter(function(line) {
                    return line != null && line.length > 0;
