@@ -29,9 +29,11 @@ var getProfiles = function (file) {
         if (err) {
             deferred.reject(err);
         } else {
-            var lines = data.toString().split("\n");
+            var lines = data.toString().replace("\r", '').split("\n");
             deferred.resolve(
-                Q.allSettled(lines.map(function (username) {
+                Q.allSettled(lines.filter(function(line) {
+                   return line != null && line.length > 0;
+                }).map(function (username) {
                     return rp('https://www.instagram.com/' + username + '/?__a=1');
                 }))
             );
