@@ -1,0 +1,21 @@
+{
+  "name": "instagram-scraper",
+  "description": "",
+  "main": "",
+  "authors": [
+    "alexchekmenev <alexchekmenev@mail.ru>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/alexchekmenev/instagram-scraper",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.1.1"
+  }
+}
